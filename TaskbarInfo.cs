@@ -135,11 +135,13 @@ namespace MusicBeePlugin
                 case PlayState.Paused:
                     TaskbarProgress.SetState(mbApiInterface.MB_GetWindowHandle(), TaskbarProgress.TaskbarStates.Paused);
                     break;
+                case PlayState.Stopped:
+                    TaskbarProgress.SetState(mbApiInterface.MB_GetWindowHandle(), TaskbarProgress.TaskbarStates.NoProgress);
+                    break;
             }
-                     
         }
-        
     }
+
     public static class TaskbarProgress
     {
         public enum TaskbarStates
